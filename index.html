@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scalivate - Curated Websites Ready to Scale</title>
+    <meta name="description" content="Buy high-quality, hand-built websites with proven SEO foundations. Turnkey websites ready to scale.">
+    <meta property="og:title" content="Scalivate - Curated Websites Ready to Scale">
+    <meta property="og:description" content="Buy high-quality, hand-built websites with proven SEO foundations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://scalivate.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-blue: #0A2540;
+            --white: #FFFFFF;
+            --accent-gold: #FFD700;
+            --light-gray: #f5f7fa;
+            --medium-gray: #e4e9f2;
+            --dark-gray: #7b8a9e;
+            --text-color: #333;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--dark-blue);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--dark-blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #083056;
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--medium-gray);
+            color: var(--dark-blue);
+        }
+
+        .btn-secondary:hover {
+            background-color: #d8dfeb;
+            transform: translateY(-2px);
+        }
+
+        .btn-large {
+            padding: 16px 32px;
+            font-size: 1.1rem;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+        }
+
+        .nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav a {
+            font-weight: 500;
+        }
+
+        .nav a.active {
+            color: var(--accent-gold);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark-blue);
+            margin: 2px 0;
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--dark-blue) 0%, #1a3d62 100%);
+            color: var(--white);
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 300px;
+        }
+
+        .abstract-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, rgba(255, 215, 0, 0.5) 100%);
+            opacity: 0.7;
+        }
+
+        .shape-1 {
+            width: 150px;
+            height: 150px;
+            top: 0;
+            left: 0;
+        }
+
+        .shape-2 {
+            width: 100px;
+            height: 100px;
+            bottom: 40px;
+            right: 40px;
+        }
+
+        .shape-3 {
+            width: 80px;
+            height: 80px;
+            top: 60px;
+            right: 0;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+
+        /* Listings Grid */
+        .listings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .listing-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .listing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .listing-image {
+            height: 200px;
+            background-color: var(--medium-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-gray);
+        }
+
+        .listing-content {
+            padding: 1.5rem;
+        }
+
+        .listing-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .listing-niche {
+            color: var(--accent-gold);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .listing-desc {
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+        }
+
+        .listing-price {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+        }
+
+        /* How It Works */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .step-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Why Scalivate */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit {
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Newsletter */
+        .newsletter {
+            text-align: center;
+        }
+
+        .newsletter form {
+            display: flex;
+            max-width: 500px;
+            margin: 2rem auto;
+            gap: 1rem;
+        }
+
+        .newsletter input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid var(--medium-gray);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer h3, .footer h4 {
+            color: var(--white);
+        }
+
+        .footer a {
+            color: var(--white);
+            opacity: 0.8;
+        }
+
+        .footer a:hover {
+            color: var(--accent-gold);
+            opacity: 1;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .steps, .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .proof-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .newsletter form {
+                flex-direction: column;
+            }
+            
+            .cta-section {
+                flex-direction: column;
+            }
+            
+            .listings-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">Scalivate</a>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="listings.html">Browse Websites</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="listings.html" class="btn btn-primary">Browse Websites</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Buy High-Quality Websites Ready to Scale.</h1>
+                <p>We build, grow, and index websites so you can focus on scaling.</p>
+                <a href="listings.html" class="btn btn-primary btn-large">Browse Websites</a>
+            </div>
+            <div class="hero-visual">
+                <div class="abstract-shape shape-1"></div>
+                <div class="abstract-shape shape-2"></div>
+                <div class="abstract-shape shape-3"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-listings">
+        <div class="container">
+            <h2>Featured Websites</h2>
+            <div class="listings-grid" id="featured-listings">
+                <!-- Featured listings will be populated by JavaScript -->
+                <div class="listing-card">
+                    <div class="listing-image">Website Image</div>
+                    <div class="listing-content">
+                        <h3 class="listing-title">Premium Tech Blog</h3>
+                        <div class="listing-niche">Technology & Gadgets</div>
+                        <p class="listing-desc">Established tech blog with 10k monthly visitors and monetized with display ads and affiliate links.</p>
+                        <div class="listing-price">$12,500</div>
+                        <a href="#" class="btn btn-secondary">View Details</a>
+                    </div>
+                </div>
+                <div class="listing-card">
+                    <div class="listing-image">Website Image</div>
+                    <div class="listing-content">
+                        <h3 class="listing-title">Eco-Friendly Products</h3>
+                        <div class="listing-niche">Sustainable Living</div>
+                        <p class="listing-desc">E-commerce store selling eco-friendly products with strong SEO foundation and growing traffic.</p>
+                        <div class="listing-price">$18,000</div>
+                        <a href="#" class="btn btn-secondary">View Details</a>
+                    </div>
+                </div>
+                <div class="listing-card">
+                    <div class="listing-image">Website Image</div>
+                    <div class="listing-content">
+                        <h3 class="listing-title">Fitness Coaching</h3>
+                        <div class="listing-niche">Health & Wellness</div>
+                        <p class="listing-desc">Membership-based fitness coaching website with recurring revenue and engaged community.</p>
+                        <div class="listing-price">$22,000</div>
+                        <a href="#" class="btn btn-secondary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">🚀</div>
+                    <h3>We Build</h3>
+                    <p>Our team creates high-converting websites with solid technical foundations.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">📈</div>
+                    <h3>We Rank</h3>
+                    <p>We implement proven SEO strategies to get your site ranking in search results.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">⚡</div>
+                    <h3>You Scale</h3>
+                    <p>Take over a ready-to-go business and focus on growth from day one.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-scalivate">
+        <div class="container">
+            <h2>Why Choose Scalivate</h2>
+            <div class="benefits-grid">
+                <div class="benefit">
+                    <h3>Hand-Built</h3>
+                    <p>Every website is carefully crafted with attention to detail and user experience.</p>
+                </div>
+                <div class="benefit">
+                    <h3>Proven SEO Foundations</h3>
+                    <p>Websites come with established rankings and traffic generation systems.</p>
+                </div>
+                <div class="benefit">
+                    <h3>Turnkey & Revenue-Ready</h3>
+                    <p>Start earning from day one with monetization already in place.</p>
+                </div>
+                <div class="benefit">
+                    <h3>No Middlemen</h3>
+                    <p>Direct ownership transfer with no brokers or hidden fees.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Updated on New Listings</h2>
+            <p>Join our newsletter to be the first to know about new website opportunities.</p>
+            <form id="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+            <p id="newsletter-message" class="hidden"></p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Scalivate</h3>
+                    <p>Curated Websites Ready to Scale.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="listings.html">Browse Websites</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter">Twitter</a>
+                        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Scalivate. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple newsletter form handling
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const message = document.getElementById('newsletter-message');
+            message.textContent = 'Thanks for subscribing!';
+            message.classList.remove('hidden');
+            this.reset();
+            
+            // Hide message after 3 seconds
+            setTimeout(() => {
+                message.classList.add('hidden');
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
