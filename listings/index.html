@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Listing - Scalivate</title>
+    <meta name="description" content="View detailed information about this website listing from Scalivate.">
+    <meta property="og:title" content="Website Listing - Scalivate">
+    <meta property="og:description" content="View detailed information about this website listing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://scalivate.com/listing">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "Website Listing",
+      "description": "Premium website ready to scale",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "0"
+      }
+    }
+    </script>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-blue: #0A2540;
+            --white: #FFFFFF;
+            --accent-gold: #FFD700;
+            --light-gray: #f5f7fa;
+            --medium-gray: #e4e9f2;
+            --dark-gray: #7b8a9e;
+            --text-color: #333;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--dark-blue);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--dark-blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #083056;
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--medium-gray);
+            color: var(--dark-blue);
+        }
+
+        .btn-secondary:hover {
+            background-color: #d8dfeb;
+            transform: translateY(-2px);
+        }
+
+        .btn-large {
+            padding: 16px 32px;
+            font-size: 1.1rem;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+        }
+
+        .nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav a {
+            font-weight: 500;
+        }
+
+        .nav a.active {
+            color: var(--accent-gold);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark-blue);
+            margin: 2px 0;
+            transition: var(--transition);
+        }
+
+        /* Listing Detail */
+        .listing-detail {
+            padding: 2rem 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--dark-blue);
+            font-weight: 500;
+        }
+
+        .listing-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .listing-image {
+            height: 300px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            background-color: var(--medium-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-gray);
+        }
+
+        .listing-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin: 1rem 0;
+        }
+
+        .listing-niche {
+            color: var(--accent-gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Proof Section */
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .proof-item {
+            text-align: center;
+        }
+
+        .proof-placeholder {
+            height: 200px;
+            background-color: var(--medium-gray);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+        }
+
+        /* Included List */
+        .included-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .included-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .included-list li:before {
+            content: "✓";
+            color: var(--accent-gold);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Transfer Process */
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .timeline-step {
+            text-align: center;
+        }
+
+        .timeline-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--dark-blue);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: bold;
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            max-width: 500px;
+            width: 100%;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer h3, .footer h4 {
+            color: var(--white);
+        }
+
+        .footer a {
+            color: var(--white);
+            opacity: 0.8;
+        }
+
+        .footer a:hover {
+            color: var(--accent-gold);
+            opacity: 1;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .listing-hero {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .proof-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">Scalivate</a>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="listings.html">Browse Websites</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="listings.html" class="btn btn-primary">Browse Websites</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="listing-detail">
+        <div class="container">
+            <a href="listings.html" class="back-link">← Back to Listings</a>
+            <div class="listing-hero">
+                <div class="listing-info">
+                    <h1 id="listing-title">Premium Tech Blog</h1>
+                    <p class="listing-niche" id="listing-niche">Technology & Gadgets</p>
+                    <p class="listing-price" id="listing-price">$12,500</p>
+                    <button class="btn btn-primary btn-large" id="buy-now-btn">Buy Now</button>
+                </div>
+                <div class="listing-image">
+                    <div class="image-placeholder">Website Preview</div>
+                </div>
+            </div>
+
+            <div class="key-stats">
+                <h2>Key Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Domain</h3>
+                        <p id="stat-domain">techinsightsblog.com</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Site Age</h3>
+                        <p id="stat-age">18 months</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Indexing</h3>
+                        <p id="stat-indexing">Fully Indexed</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Primary Keywords</h3>
+                        <p id="stat-keywords">Tech reviews, Gadget comparisons, Tech news</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Rank Position</h3>
+                        <p id="stat-rank">Top 5 for 15+ keywords</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Est. Monthly Traffic</h3>
+                        <p id="stat-traffic">10,000+ visits</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="proof-section">
+                <h2>Proof & Verification</h2>
+                <div class="proof-grid">
+                    <div class="proof-item">
+                        <div class="proof-placeholder">GSC Screenshot</div>
+                        <p>Google Search Console Data</p>
+                    </div>
+                    <div class="proof-item">
+                        <div class="proof-placeholder">Analytics Snapshot</div>
+                        <p>Traffic Analytics</p>
+                    </div>
+                    <div class="proof-item">
+                        <div class="proof-placeholder">Video Walkthrough</div>
+                        <p>Site Demonstration</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="included-section">
+                <h2>What's Included</h2>
+                <ul class="included-list">
+                    <li>Full domain ownership transfer</li>
+                    <li>All site files and content</li>
+                    <li>Brand assets (logo, design files)</li>
+                    <li>Google Search Console access</li>
+                    <li>Google Analytics access</li>
+                    <li>Social media accounts (if applicable)</li>
+                </ul>
+            </div>
+
+            <div class="transfer-process">
+                <h2>Transfer Process</h2>
+                <div class="timeline">
+                    <div class="timeline-step">
+                        <div class="timeline-icon">1</div>
+                        <h3>Payment via Escrow.com</h3>
+                        <p>Secure transaction handled through Escrow.com</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-icon">2</div>
+                        <h3>DNS & Hosting Transfer</h3>
+                        <p>We assist with transferring all technical assets</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-icon">3</div>
+                        <h3>Analytics Handover</h3>
+                        <p>Full access to all analytics and tracking accounts</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-icon">4</div>
+                        <h3>Completion & Support</h3>
+                        <p>7-day support period after transfer completion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="buy-now-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Secure Purchase Process</h2>
+            <p>All transactions are handled securely through Escrow.com to protect both buyers and sellers.</p>
+            <p>To proceed with your purchase, please contact us with the listing reference number, and we'll initiate the Escrow process.</p>
+            <a href="contact.html" class="btn btn-primary">Contact Us to Purchase</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Scalivate</h3>
+                    <p>Curated Websites Ready to Scale.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="listings.html">Browse Websites</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter">Twitter</a>
+                        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Scalivate. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            const nav = document.querySelector('.nav');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Modal functionality
+        const buyNowBtn = document.getElementById('buy-now-btn');
+        const modal = document.getElementById('buy-now-modal');
+        const closeModal = document.querySelector('.close-modal');
+
+        buyNowBtn.addEventListener('click', function() {
+            modal.classList.remove('hidden');
+        });
+
+        closeModal.addEventListener('click', function() {
+            modal.classList.add('hidden');
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
