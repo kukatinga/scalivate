@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Scalivate</title>
+    <meta name="description" content="Learn about Scalivate and our mission to provide high-quality, ready-to-scale websites.">
+    <meta property="og:title" content="About Us - Scalivate">
+    <meta property="og:description" content="Learn about Scalivate and our mission.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://scalivate.com/about">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-blue: #0A2540;
+            --white: #FFFFFF;
+            --accent-gold: #FFD700;
+            --light-gray: #f5f7fa;
+            --medium-gray: #e4e9f2;
+            --dark-gray: #7b8a9e;
+            --text-color: #333;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--dark-blue);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--dark-blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #083056;
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--medium-gray);
+            color: var(--dark-blue);
+        }
+
+        .btn-secondary:hover {
+            background-color: #d8dfeb;
+            transform: translateY(-2px);
+        }
+
+        .btn-large {
+            padding: 16px 32px;
+            font-size: 1.1rem;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+        }
+
+        .nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav a {
+            font-weight: 500;
+        }
+
+        .nav a.active {
+            color: var(--accent-gold);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark-blue);
+            margin: 2px 0;
+            transition: var(--transition);
+        }
+
+        /* About Hero Section */
+        .about-hero {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, #1a3d62 100%);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            color: var(--white);
+        }
+
+        .about-hero .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Content */
+        .about-content {
+            padding: 4rem 0;
+        }
+
+        .about-content .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-text h2 {
+            margin-top: 2rem;
+        }
+
+        .about-text h2:first-child {
+            margin-top: 0;
+        }
+
+        .about-text ul {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .about-text li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .about-text li:before {
+            content: "•";
+            color: var(--accent-gold);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .cta-section {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .about-image {
+            height: 400px;
+            background-color: var(--medium-gray);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-gray);
+            position: sticky;
+            top: 100px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer h3, .footer h4 {
+            color: var(--white);
+        }
+
+        .footer a {
+            color: var(--white);
+            opacity: 0.8;
+        }
+
+        .footer a:hover {
+            color: var(--accent-gold);
+            opacity: 1;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .cta-section {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">Scalivate</a>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="listings.html">Browse Websites</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="listings.html" class="btn btn-primary">Browse Websites</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="about-hero">
+        <div class="container">
+            <h1>About Scalivate</h1>
+            <p class="subtitle">Building digital assets for the next generation of entrepreneurs</p>
+        </div>
+    </section>
+
+    <section class="about-content">
+        <div class="container">
+            <div class="about-text">
+                <h2>Our Story</h2>
+                <p>Scalivate was founded with a simple mission: to create high-quality, SEO-optimized websites that are ready to scale from day one. Unlike marketplace platforms that connect buyers and sellers, we only sell websites from our own portfolio that we've personally built and grown.</p>
+                
+                <p>Our team consists of experienced developers, SEO specialists, and digital marketers who understand what it takes to build a successful online business. We've channeled this expertise into creating turnkey websites that have solid foundations for growth.</p>
+                
+                <h2>Our Approach</h2>
+                <p>Each website in our portfolio is carefully crafted with attention to technical SEO, user experience, and monetization potential. We don't just build sites - we grow them, establish their search presence, and validate their business models before offering them to new owners.</p>
+                
+                <p>This first-party approach means we can guarantee the quality of every asset and provide transparent information about its performance and potential.</p>
+                
+                <h2>Why Choose Us</h2>
+                <ul>
+                    <li><strong>No middlemen:</strong> Direct transactions without broker fees</li>
+                    <li><strong>Proven track record:</strong> Real data and performance metrics</li>
+                    <li><strong>Full transparency:</strong> Complete access to analytics before purchase</li>
+                    <li><strong>Secure transfers:</strong> All transactions handled through Escrow.com</li>
+                    <li><strong>Post-transfer support:</strong> We ensure a smooth transition</li>
+                </ul>
+                
+                <div class="cta-section">
+                    <a href="listings.html" class="btn btn-primary">Browse Our Websites</a>
+                    <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="about-image">
+                <div class="image-placeholder">Team Photo</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Scalivate</h3>
+                    <p>Curated Websites Ready to Scale.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="listings.html">Browse Websites</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter">Twitter</a>
+                        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Scalivate. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple mobile menu toggle functionality
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            const nav = document.querySelector('.nav');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>
